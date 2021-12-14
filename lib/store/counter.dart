@@ -14,9 +14,16 @@ abstract class _Counter with Store {
   @observable
   int value = 0;
 
+  _Counter() {
+    Stream<DatabaseEvent> _countStream = counter.onValue;
+    _countStream.listen((event) {
+      value = event.snapshot.value as int;
+    });
+  }
+
   @action
   void increment() async {
-    value++;
-    await counter.set(value);
+    int newVal = value + 1;
+    await counter.set(newVal);
   }
 }
