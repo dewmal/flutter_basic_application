@@ -36,10 +36,7 @@ class RegisterPage extends StatelessWidget {
                         ),
                         Text(
                           "App Name",
-                          style: Theme.of(context)
-                              .textTheme
-                              .headline1
-                              ?.copyWith(fontWeight: FontWeight.bold),
+                          style: Theme.of(context).textTheme.headline1,
                         ),
                         const SizedBox(
                           height: 12,
